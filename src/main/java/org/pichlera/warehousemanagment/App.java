@@ -1,7 +1,10 @@
 package org.pichlera.warehousemanagment;
 
 /**
- * Hello world!
+ *
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This is the App Class four the warehouse manager
  *
  */
 public class App 

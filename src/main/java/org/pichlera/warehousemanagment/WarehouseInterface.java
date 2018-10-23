@@ -1,5 +1,11 @@
 package org.pichlera.warehousemanagment;
 
+
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * Warehouse interface
+ */
 public interface WarehouseInterface {
 
     public boolean configuration(int column, int row);

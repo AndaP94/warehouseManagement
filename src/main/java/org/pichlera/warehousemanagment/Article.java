@@ -1,5 +1,11 @@
 package org.pichlera.warehousemanagment;
 
+
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents an article with ID and Position
+ */
 public class Article extends BasicArticle {
 
     private int articleId;
@@ -7,8 +13,15 @@ public class Article extends BasicArticle {
     private Position position;
 
 
-
-
+    /**
+     * Create a new Aricle
+     * @param articledescription article name
+     * @param articleId article id
+     * @param price article price
+     * @param pos article position
+     * @param supplier article supplier
+     * @param packageUnit article package unit
+     */
     public Article(String articledescription, int articleId, double price, Position pos, Supplier supplier, PackageUnit packageUnit) {
         super(articledescription, price, supplier, packageUnit);
         this.articleId = articleId;

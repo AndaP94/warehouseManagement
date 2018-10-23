@@ -1,11 +1,22 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the supplier for the article
+ */
 public class Supplier {
 
     private String firstname;
     private String lastname;
     private String company;
 
+    /**
+     * Create the Supplier
+     * @param firstname firstname
+     * @param lastname lastname
+     * @param company company
+     */
     public Supplier(String firstname, String lastname, String company) {
         this.firstname = firstname;
         this.lastname = lastname;

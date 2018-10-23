@@ -1,6 +1,12 @@
 package org.pichlera.warehousemanagment;
 import java.util.ArrayList;
 
+
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the cache Database for the warehouse
+ */
 public class Database implements DatabaseInterface {
 
     private ArrayList<BasicArticle> basicArticles;

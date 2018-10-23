@@ -1,10 +1,20 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the position from the article
+ */
 public class Position {
 
     private int x;
     private int y;
 
+    /**
+     * Create position
+     * @param x row
+     * @param y column
+     */
     public Position(int x, int y) {
         this.x = x;
         this.y = y;

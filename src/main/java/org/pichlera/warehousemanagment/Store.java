@@ -1,9 +1,19 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the Store for the Article and matrix
+ */
 public class Store {
 
     Article[][] articleStore;
 
+    /**
+     * Create the store matrix
+     * @param row
+     * @param column
+     */
     public Store(int row, int column) {
         this.articleStore = new Article[row][column];
     }

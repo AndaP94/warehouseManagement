@@ -1,5 +1,10 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the user GUI
+ */
 public class UserGui implements UserInterface {
 
 
@@ -9,6 +14,10 @@ public class UserGui implements UserInterface {
     private String userName;
     private CommandWords commandWords;
 
+    /**
+     * Create the User GUI
+     * @param userName user name
+     */
     public UserGui(String userName){
         this.warehouse = null;
         this.parser = new Parser();
@@ -17,7 +26,9 @@ public class UserGui implements UserInterface {
         this.commandWords = new CommandWords();
     }
 
-
+    /**
+     * Start the GUI
+     */
     @Override
     public void run() {
         database.fillDatabaseDemo();
@@ -51,6 +62,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * Configure the warehouse
+     */
     public void configureWarehouse(){
 
         do{
@@ -79,6 +94,9 @@ public class UserGui implements UserInterface {
 
     }
 
+    /**
+     * Outsource an article
+     */
     @Override
     public void outsource() {
 
@@ -111,6 +129,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * Stock one article into the store
+     */
     @Override
     public void stock() {
 
@@ -317,6 +339,9 @@ public class UserGui implements UserInterface {
 
     }
 
+    /**
+     * View alle Article from the Store
+     */
     @Override
     public void inventory() {
         System.out.println("All Article in the Store: \n");
@@ -325,6 +350,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * View the article position with the id
+     */
     @Override
     public void position() {
 
@@ -357,6 +386,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * View the content of a position
+     */
     @Override
     public void content() {
 
@@ -395,6 +428,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * show alle valid commands with explanation
+     */
     @Override
     public void help() {
 
@@ -402,6 +439,9 @@ public class UserGui implements UserInterface {
 
     }
 
+    /**
+     * Reconfigure the Store
+     */
     @Override
     public void configure() {
 
@@ -436,6 +476,10 @@ public class UserGui implements UserInterface {
 
     }
 
+
+    /**
+     * Views the whole store matrix
+     */
     public void showStore(){
 
         System.out.println(warehouse.showStore());

@@ -1,5 +1,10 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This Class represents a basic article with name, price, supplier and package unit
+ */
 
 public class BasicArticle {
 
@@ -12,6 +17,13 @@ public class BasicArticle {
     private PackageUnit packageUnit;
 
 
+    /**
+     * Create a new basic article
+     * @param articledescription article name
+     * @param price article price
+     * @param supplier article supplier
+     * @param packageUnit article package unit
+     */
     public BasicArticle(String articledescription, double price, Supplier supplier, PackageUnit packageUnit) {
         this.articledescription = articledescription;
         this.price = price;

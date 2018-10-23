@@ -1,7 +1,17 @@
 package org.pichlera.warehousemanagment;
 
+
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ *
+ * This Class represents the command words for the GUI
+ */
 public class CommandWords {
 
+    /**
+     * valid commands
+     */
     private static final String validCommands[] = {
             "outsource" ,
             "stock",
@@ -15,6 +25,9 @@ public class CommandWords {
 
     };
 
+    /**
+     * explanation for the commands
+     */
     private static final String commandsExplanation[] = {
             "Take article from stock",
             "Store article",
@@ -27,6 +40,11 @@ public class CommandWords {
             "exit the program",
     };
 
+    /**
+     *
+     * @param aString input
+     * @return true if the command input is valid
+     */
     public boolean isCommand(String aString){
 
         if(aString !=null){
@@ -40,6 +58,9 @@ public class CommandWords {
 
     }
 
+    /**
+     * Shows all commands
+     */
     public void showAll(){
 
         for(String command : validCommands){
@@ -48,6 +69,10 @@ public class CommandWords {
         System.out.println();
     }
 
+    /**
+     *
+     * @return all commands with explanation
+     */
     public String getValidCommandsWithAction(){
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < validCommands.length; i++){

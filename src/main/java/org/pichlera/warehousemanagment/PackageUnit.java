@@ -1,5 +1,10 @@
 package org.pichlera.warehousemanagment;
 
+/**
+ * @author Andreas Pichler
+ * @version 23.10.2018
+ * This class represents the package unit for the article
+ */
 public class PackageUnit {
 
     private String unit;

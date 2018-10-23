@@ -7,12 +7,14 @@ public class UserGui implements UserInterface {
     private Parser parser;
     private Database database;
     private String userName;
+    private CommandWords commandWords;
 
     public UserGui(String userName){
         this.warehouse = null;
         this.parser = new Parser();
         this.database = new Database();
         this.userName = userName;
+        this.commandWords = new CommandWords();
     }
 
 
@@ -395,8 +397,8 @@ public class UserGui implements UserInterface {
     @Override
     public void help() {
 
-        System.out.println("Commands: ");
-        parser.showCommands();
+        System.out.println(commandWords.getValidCommandsWithAction());
+
     }
 
     @Override

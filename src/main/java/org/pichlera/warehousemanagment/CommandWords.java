@@ -15,6 +15,18 @@ public class CommandWords {
 
     };
 
+    private static final String commandsExplanation[] = {
+            "Take article from stock",
+            "Store article",
+            "Views all articles with their information and storage position",
+            "Query the storage location of an article",
+            "Query the article for a specific storage position",
+            "Views the whole store matrix",
+            "Number of rows and columns be changeable",
+            "Views the valid commands with their function",
+            "exit the program",
+    };
+
     public boolean isCommand(String aString){
 
         if(aString !=null){
@@ -34,5 +46,13 @@ public class CommandWords {
             System.out.println(command + "\n");
         }
         System.out.println();
+    }
+
+    public String getValidCommandsWithAction(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < validCommands.length; i++){
+            stringBuilder.append(validCommands[i] + " => " + commandsExplanation[i] + "\n");
+        }
+        return String.valueOf(stringBuilder);
     }
 }

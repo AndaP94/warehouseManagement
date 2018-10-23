@@ -43,7 +43,7 @@ public class CommandWords {
     public void showAll(){
 
         for(String command : validCommands){
-            System.out.println(command + "\n");
+            System.out.println(command);
         }
         System.out.println();
     }

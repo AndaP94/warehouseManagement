@@ -1,11 +1,11 @@
 package org.pichlera.warehousemanagment;
 
 
-public class SparesWarehousec implements WarehouseInterface{
+public class SparesWarehouse implements WarehouseInterface{
 
     private Store store;
 
-    public SparesWarehousec(int row, int column){
+    public SparesWarehouse(int row, int column){
         store = new Store(row, column);
     }
 
@@ -131,8 +131,12 @@ public class SparesWarehousec implements WarehouseInterface{
             for (int i = 0; i < getStore().getArticleStore().length; i++) {
                 for (int j = 0; j < getStore().getArticleStore()[i].length; j++) {
 
-                    if(getStore().getArticleStore()[i][j].getArticleId() == id){
-                        getStore().getArticleStore()[i][j] = null;
+                    try {
+                        if (getStore().getArticleStore()[i][j].getArticleId() == id) {
+                            getStore().getArticleStore()[i][j] = null;
+                        }
+                    } catch (NullPointerException e) {
+
                     }
                 }
             }
@@ -262,8 +266,13 @@ public class SparesWarehousec implements WarehouseInterface{
         for (int i = 0; i < getStore().getArticleStore().length; i++) {
             for (int j = 0; j < getStore().getArticleStore()[i].length; j++) {
 
-                if(getStore().getArticleStore()[i][j].getArticleId() == id){
-                    return true;
+
+                try{
+                    if(getStore().getArticleStore()[i][j].getArticleId() == id){
+                        return true;
+                    }
+                }catch (NullPointerException e){
+
                 }
             }
         }

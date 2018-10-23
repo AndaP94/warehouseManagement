@@ -28,7 +28,7 @@ public class Store {
 
 
                 }catch (NullPointerException e){
-                    stringBuilder.append("--isempty--\t\t");
+                    stringBuilder.append("isempty\t\t");
                 }
 
             }

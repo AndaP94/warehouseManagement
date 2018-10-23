@@ -66,7 +66,7 @@ public class UserGui implements UserInterface {
                     System.out.println("pls type no negative number");
                 }
                 else {
-                    this.warehouse = new SparesWarehousec(row,column);
+                    this.warehouse = new SparesWarehouse(row,column);
                     break;
                 }
 
@@ -97,13 +97,14 @@ public class UserGui implements UserInterface {
 
                 if(warehouse.getArticlePerId(id) !=null && id > 0){
                     warehouse.removeArticlePerId(id);
+                    System.out.println("article removed..");
                     break;
                 }
                 else{
                     System.out.println("pls take a wright Article ID");
                 }
 
-            }catch (Exception e){
+            }catch (NumberFormatException e){
                 System.out.println("pls type no words ");
             }
         }while (true);

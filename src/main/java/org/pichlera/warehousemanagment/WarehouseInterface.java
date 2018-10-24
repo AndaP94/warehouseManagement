@@ -8,7 +8,7 @@ package org.pichlera.warehousemanagment;
  */
 public interface WarehouseInterface {
 
-    public boolean configuration(int column, int row);
+    public boolean configuration(int row, int column);
     public String showStore();
     public Article getArticlePerId(int id);
     public Article getArticlePerDescription(String articleDescription);

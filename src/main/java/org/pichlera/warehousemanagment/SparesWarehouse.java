@@ -4,7 +4,7 @@ package org.pichlera.warehousemanagment;
  * @author Andreas Pichler
  * @version 23.10.2018
  *
- * This class represents a spare warehouse of screws
+ * This class representsm a spare warehouse of screws
  */
 
 public class SparesWarehouse implements WarehouseInterface{

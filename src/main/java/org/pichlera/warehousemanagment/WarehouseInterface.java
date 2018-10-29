@@ -1,4 +1,5 @@
 package org.pichlera.warehousemanagment;
+import java.util.ArrayList;
 
 
 /**
@@ -9,15 +10,15 @@ package org.pichlera.warehousemanagment;
 public interface WarehouseInterface {
 
     public boolean configuration(int row, int column);
-    public String showStore();
+    public Store getStore();
     public Article getArticlePerId(int id);
     public Article getArticlePerDescription(String articleDescription);
     public Article getArticlePerPosition(Position position);
     public boolean addArticle(String articledescription, int price, Supplier supplier, PackageUnit packageUnit);
-    public void removeArticlePerId(int id);
-    public String showAllArticleWithDetails();
+    public boolean removeArticlePerId(int id);
+    public ArrayList<Article> getAllArticlesWithDetails();
     public Position getPositionFormArticle(Article article);
-    public String getArticleWithId();
+    public ArrayList<ArticleDTO> getArticleDescriptionAndId();
     public boolean addArticle(BasicArticle article);
     public boolean poolIsEmpty();
 }

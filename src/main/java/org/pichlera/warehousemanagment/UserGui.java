@@ -1,4 +1,6 @@
 package org.pichlera.warehousemanagment;
+import java.util.ArrayList;
+
 
 /**
  * @author Andreas Pichler
@@ -110,7 +112,11 @@ public class UserGui implements UserInterface {
             try {
 
                 System.out.println("Pls type in the article you want to outsource with the id");
-                System.out.println(warehouse.getArticleWithId());
+                ArrayList<ArticleDTO> dtoArrayList = warehouse.getArticleDescriptionAndId();
+                for(int i = 0; i < dtoArrayList.size(); i++){
+                    System.out.println(dtoArrayList.get(i).toString());
+                }
+
                 int id = Integer.valueOf(parser.readLine());
 
                 if(warehouse.getArticlePerId(id) !=null && id > 0){
@@ -346,7 +352,13 @@ public class UserGui implements UserInterface {
     public void inventory() {
         System.out.println("All Article in the Store: \n");
 
-        System.out.println(warehouse.showAllArticleWithDetails());
+        ArrayList<Article> articleArrayList = warehouse.getAllArticlesWithDetails();
+
+
+        for (int i = 0; i < articleArrayList.size(); i++){
+            System.out.println(articleArrayList.get(i).toString());
+        }
+
 
     }
 
@@ -363,7 +375,10 @@ public class UserGui implements UserInterface {
 
             try {
 
-                System.out.println(warehouse.getArticleWithId());
+                ArrayList<ArticleDTO> dtoArrayList = warehouse.getArticleDescriptionAndId();
+                for(int i = 0; i < dtoArrayList.size(); i++){
+                    System.out.println(dtoArrayList.get(i).toString());
+                }
 
                 int id = Integer.valueOf(parser.readLine());
 
@@ -482,7 +497,10 @@ public class UserGui implements UserInterface {
      */
     public void showStore(){
 
-        System.out.println(warehouse.showStore());
+        Store store = warehouse.getStore();
+
+
+        System.out.println(store.toString());
 
     }
 }

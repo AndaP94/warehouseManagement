@@ -1,4 +1,6 @@
 package org.pichlera.warehousemanagment;
+import java.util.ArrayList;
+
 
 /**
  * @author Andreas Pichler
@@ -21,6 +23,7 @@ public class SparesWarehouse implements WarehouseInterface{
         store = new Store(row, column);
     }
 
+    @Override
     public Store getStore() {
         return store;
     }
@@ -67,15 +70,6 @@ public class SparesWarehouse implements WarehouseInterface{
 
     }
 
-
-    /**
-     *
-     * @return the whole store matrix
-     */
-    @Override
-    public String showStore() {
-        return this.store.toString();
-    }
 
 
     /**
@@ -191,7 +185,7 @@ public class SparesWarehouse implements WarehouseInterface{
      * @param id article ID
      */
     @Override
-    public void removeArticlePerId(int id) {
+    public boolean removeArticlePerId(int id) {
 
         if(ckeckId(id)){
             for (int i = 0; i < getStore().getArticleStore().length; i++) {
@@ -200,6 +194,7 @@ public class SparesWarehouse implements WarehouseInterface{
                     try {
                         if (getStore().getArticleStore()[i][j].getArticleId() == id) {
                             getStore().getArticleStore()[i][j] = null;
+                            return true;
                         }
                     } catch (NullPointerException e) {
 
@@ -207,6 +202,7 @@ public class SparesWarehouse implements WarehouseInterface{
                 }
             }
         }
+        return false;
     }
 
 
@@ -214,20 +210,21 @@ public class SparesWarehouse implements WarehouseInterface{
      *
      * @return all Article with details
      */
-    public String showAllArticleWithDetails(){
+    @Override
+    public ArrayList<Article> getAllArticlesWithDetails(){
 
-        StringBuilder stringBuilder = new StringBuilder();
+        ArrayList<Article> articleList = new ArrayList<>();
 
         for (int i = 0; i < getStore().getArticleStore().length; i++) {
             for (int j = 0; j < getStore().getArticleStore()[i].length; j++) {
 
                 if(getStore().getArticleStore()[i][j] !=null){
-                    stringBuilder.append(getStore().getArticleStore()[i][j].toString() + "\n\n");
+                    articleList.add(getStore().getArticleStore()[i][j]);
                 }
             }
         }
 
-        return String.valueOf(stringBuilder);
+        return articleList;
     }
 
     /**
@@ -251,18 +248,19 @@ public class SparesWarehouse implements WarehouseInterface{
      *
      * @return articles with ID
      */
-    public String getArticleWithId(){
+    public ArrayList<ArticleDTO> getArticleDescriptionAndId(){
 
-        StringBuilder stringBuilder = new StringBuilder();
+        ArrayList<ArticleDTO> articleDTOList = new ArrayList<>();
         for (int i = 0; i < getStore().getArticleStore().length; i++) {
             for (int j = 0; j < getStore().getArticleStore()[i].length; j++) {
 
                 if(getStore().getArticleStore()[i][j] !=null) {
-                    stringBuilder.append("Article ID: " + getStore().getArticleStore()[i][j].getArticleId() + "\tArticle: " + getStore().getArticleStore()[i][j].getArticledescription() + "\n");
+                    ArticleDTO articleDTO = new ArticleDTO(getStore().getArticleStore()[i][j].getArticleId(), getStore().getArticleStore()[i][j].getArticledescription());
+                    articleDTOList.add(articleDTO);
                 }
             }
         }
-        return String.valueOf(stringBuilder);
+        return articleDTOList;
     }
 
 
